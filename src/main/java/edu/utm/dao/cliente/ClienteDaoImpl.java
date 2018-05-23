@@ -19,7 +19,7 @@ public class ClienteDaoImpl implements ClienteDao {
 		this.sqlSession=sqlSession;
 	}
 	
-	//@Override
+	@Override
 	public List<Cliente> findAllClientes() {
 		List<Cliente> list = null;
 		try {
@@ -37,7 +37,7 @@ public class ClienteDaoImpl implements ClienteDao {
 		return list;
 	}
 	
-	//@Override
+	@Override
 	public void updateCliente(Cliente cliente) {
 		try {
 			ClienteMapper clienteMapper = sqlSession
@@ -51,7 +51,7 @@ public class ClienteDaoImpl implements ClienteDao {
 			
 	}
 
-	//@Override
+	@Override
 	public Cliente findOneCliente(Cliente cliente) {
 		Cliente result=null;
 		try {
@@ -65,7 +65,7 @@ public class ClienteDaoImpl implements ClienteDao {
 		return result;
 	}
 
-	//@Override
+	@Override
 	public void insertCliente(Cliente cliente) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
@@ -76,7 +76,7 @@ public class ClienteDaoImpl implements ClienteDao {
 			System.out.println("Error: "+e);
 		}
 	}
-	//@Override
+	@Override
 	public void deleteOneCliente(Cliente cliente) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);

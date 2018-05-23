@@ -28,7 +28,7 @@
   
   <select id="findOneProducto" parameterType="edu.utm.bd.domain.Producto" resultMap="BaseResultMap">
   		SELECT producto.* FROM PRODUCTO
-  		WHERE idproducto = #{idproducto}
+  		WHERE idproduco = #{idproduco}
   </select>
   
 </mapper>
