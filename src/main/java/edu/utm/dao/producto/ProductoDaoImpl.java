@@ -51,5 +51,40 @@ public class ProductoDaoImpl implements ProductoDao{
 		return result;
 	}
 	
+
+	@Override
+	public void insertProducto(Producto producto) {
+		try {
+			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
+			productoMapper.insertProducto(producto);
+			System.out.println("Producto "+producto.getPronombre() +" insertado");
+		}
+		catch(Exception e){
+			System.out.println("Error: "+e);
+		}
+	}
+	@Override
+	public void deleteProducto(Producto producto) {
+		try {
+			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
+			productoMapper.deleteProducto(producto);
+			//System.out.println("Producto "+producto.getPronombre() +" eliminado");
+		}
+		catch(Exception e){
+			System.out.println("Error: "+e);
+		}
+	}
 	
+	@Override
+	public void updateProducto(Producto producto) {
+		try {
+			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
+			productoMapper.updateProducto(producto);
+			//System.out.println("Cliente "+cliente.getIdcliente()+" actualizado");
+		} 
+		catch(Exception e){
+			System.out.println("Error updateCliente: "+e);
+		}
+			
+	}
 }

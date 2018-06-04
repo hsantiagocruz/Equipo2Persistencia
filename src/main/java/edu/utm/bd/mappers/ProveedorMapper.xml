@@ -27,4 +27,17 @@
   		WHERE idproveedor = #{idproveedor}
   </select>
   
+  <insert id="insertProveedor" parameterType="edu.utm.bd.domain.Proveedor">
+  		INSERT INTO PROVEEDOR (idproveedor,provnombre) VALUES(#{idproveedor},#{provnombre})
+  </insert>
+  
+   <update id="updateProveedor" parameterType="edu.utm.bd.domain.Proveedor">
+	UPDATE PROVEEDOR	 SET
+	idproveedor = #{idproveedor}, provnombre = #{provnombre} where idproveedor = #{idproveedor}
+  </update>
+      
+ <delete id="deleteOneProveedor" parameterType="edu.utm.bd.domain.Proveedor">
+  		DELETE FROM PROVEEDOR WHERE idproveedor = #{idproveedor}
+  </delete>
+
 </mapper>

@@ -7,10 +7,10 @@ import javax.inject.Named;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.utm.bd.domain.Producto;
 import edu.utm.bd.domain.Proveedor;
-import edu.utm.bd.mappers.ProductoMapper;
 import edu.utm.bd.mappers.ProveedorMapper;
+
+
 
 @Named
 public class ProveedorDaoImpl implements ProveedorDao{
@@ -38,7 +38,19 @@ public class ProveedorDaoImpl implements ProveedorDao{
 		}
 		return list;
 	}
-
+	@Override 
+	public void updateProveedor (Proveedor proveedor){
+		try{
+			
+			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
+			proveedorMapper.updateProveedor(proveedor);
+			System.out.println("Proveedor "+ proveedor.getProvnombre() +" actualizado");
+		}
+		
+		catch(Exception e){
+			System.out.println("Error updateCliente: "+e);
+		}
+	}
 	@Override
 	public Proveedor findOneProveedor(Proveedor proveedor) {
 		Proveedor result=null;
@@ -52,5 +64,30 @@ public class ProveedorDaoImpl implements ProveedorDao{
 		}
 		return result;
 	}
+	
+	@Override
+	public void insertProveedor(Proveedor proveedor) {
+		try {
+			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
+			proveedorMapper.insertProveedor(proveedor);
+			System.out.println("Proveedor " + proveedor.getProvnombre() +" insertado");
+		}
+		catch(Exception e){
+			System.out.println("Error: "+e);
+		}
+	}
+
+	@Override
+	public void deleteOneProveedor(Proveedor proveedor) {
+		try {
+			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
+			proveedorMapper.deleteOneProveedor(proveedor);
+			System.out.println("Proveedor "+proveedor.getProvnombre() +" eliminado");
+		}
+		catch(Exception e){
+			System.out.println("Error: "+e);
+		}
+	}
+	
 
 }

@@ -39,7 +39,7 @@
   <update id="updateUsuario" parameterType="edu.utm.bd.domain.Usuario">
 	UPDATE USUARIO	 SET
 	idusuario = #{idusuario}, usunombre = #{usunombre}, usuapellidos = #{usuapellidos}, 
-	usuadmin = #{usuadmin}, usunick = #{usunick}, usupass = #{usupass}
+	usuadmin = #{usuadmin}, usunick = #{usunick}, usupass = #{usupass} where idusuario = #{idusuario}
   </update>
   
  <delete id="deleteOneUsuario" parameterType="edu.utm.bd.domain.Usuario">

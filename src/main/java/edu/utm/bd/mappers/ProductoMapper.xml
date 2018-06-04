@@ -31,4 +31,21 @@
   		WHERE idproduco = #{idproduco}
   </select>
   
+   
+ <insert id="insertProducto" parameterType="edu.utm.bd.domain.Producto">
+  		INSERT INTO PRODUCTO (idproduco,pronombre,proprecioventa,propreciocompra,procantidad,proveedorId) VALUES(#{idproducto},#{pronombre},
+  		#{proprecioventa},#{propreciocompra},#{procantidad},#{proveedorId})
+  </insert>
+  
+
+  <update id="updateProducto" parameterType="edu.utm.bd.domain.Producto">
+	UPDATE PRODUCTO SET
+		pronombre = #{pronombre}, proprecioventa = #{proprecioventa},
+		propreciocompra = #{propreciocompra}, procantidad = #{procantidad},proveedorId = #{proveedorId} where idproduco = #{idproduco}
+  </update>
+ 
+   
+ <delete id="deleteProducto" parameterType="edu.utm.bd.domain.Producto">
+  		DELETE FROM PRODUCTO WHERE idproduco = #{idproduco}
+  </delete>
 </mapper>

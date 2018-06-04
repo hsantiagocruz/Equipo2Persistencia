@@ -1,0 +1,7 @@
+edu\utm\dao\FacturaDaoImpTest.class
+edu\utm\dao\ProveedorDaoImpTest.class
+edu\utm\dao\ClienteDaoImpTest.class
+edu\utm\dao\VentaDaoImpTest.class
+edu\utm\dao\CompraDaoImpl.class
+edu\utm\dao\ProductoDaoImpTest.class
+edu\utm\dao\UsuarioDaoImpTest.class

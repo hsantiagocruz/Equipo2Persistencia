@@ -6,9 +6,7 @@ import javax.inject.Named;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.utm.bd.domain.Cliente;
 import edu.utm.bd.domain.Usuario;
-import edu.utm.bd.mappers.ClienteMapper;
 import edu.utm.bd.mappers.UsuarioMapper;
 
 @Named
